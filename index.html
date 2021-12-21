@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DSRI User Registration</title>
+    <link rel="stylesheet" href="css/style_new.css">
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- Thanks to Pieter B. for helping out with the logistics -->
+    <div class="wrapper">
+        <div class="image-holder">
+            <img src="images/form-wizard.png" alt="">
+          </div>
+        <div class="container">
+            <form action="/submit-user" id="contact" method="POST">
+                <div>
+                    <h3>Account</h3>
+                    <section>
+                        <label for="">
+                            Your Name. *
+                        </label>
+                        <input type="text" id="name" name="name" class="form-control required" required>
+                        <label for="">
+                            UM Username. *
+                        </label>
+                        <input type="text" class="form-control required" placeholder="e.g. P700000 or A.Peter"
+                            id="username" name="username" required>
+                        <label for="">
+                            UM Email. *
+                        </label>
+                        <input type="email" class="form-control required" id="email" name="email" required>
+                        <label for="">
+                            Which Faculty is involved in DSRI work? *
+                        </label>
+                        <div class="form-holder">
+                            <select id="faculty" name="faculty" class="form-control required" required>
+                                <option value="FASOS" class="option">FASOS</option>
+                                <option value="FHML" class="option">FHML</option>
+                                <option value="FL" class="option">FL</option>
+                                <option value="FPN" class="option">FPN</option>
+                                <option value="FSE" class="option">FSE</option>
+                                <option value="SBE" class="option">SBE</option>
+                                <option value="UM" class="option">UM</option>
+                            </select>
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                        <label for="">
+                            Which department is involved in DSRI work? *
+                        </label>
+                        <input type="text" class="form-control required" id="organization" name="organization"
+                            placeholder="e.g. DKE or MAASTRO or IDS" required>
+                        <p>(*) Mandatory</p>
+                    </section>
+                    <h3>Project Details</h3>
+                    <section>
+                        <label for="">
+                            Type of project expected. *
+                        </label>
+                        <div id="" name="" class="checkbox-circle">
+                            <label class="active">
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Bioinformatics pipeline (python, conda, sequencing pipeline, workflows)"
+                                    checked>Bioinformatics pipeline (python, conda, sequencing pipeline,
+                                workflows)
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Continuous Delivery / Integration (website deployment, jenkins, argo cd)">Continuous
+                                Delivery / Integration (website deployment, jenkins, argo cd)
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Data hosting (SQL, knowledge graph, key-value stores, data lakes)">Data
+                                hosting
+                                (SQL, knowledge graph, key-value stores, data lakes)
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Data processing (python, java, workflows, services orchestration)">Data
+                                processing (python, java, workflows, services orchestration)
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Machine Learning on CPU (python, jupyter, matlab)">Machine Learning on CPU
+                                (python, jupyter, matlab) &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="projtype" name="projtype"
+                                    value="Machine Learning on GPU (python, jupyter, matlab)">Machine Learning on GPU
+                                (python, jupyter, matlab)
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <label for="">
+                            Project name: a short identifier slug for your project. *
+                        </label>
+                        <input type="text" class="form-control required" id="projname" name="projname"
+                            placeholder="e.g. machine-learning-analysis">
+                        <label for="">
+                            Provide a short description for your project. *
+                        </label>
+                        <textarea name="projdes" id="projdes" class="form-control  required"
+                            placeholder="what are you trying to do? Using which technologies?."
+                            style="height: 149px"></textarea>
+                        <p>(*) Mandatory</p>
+                    </section>
+                    <h3>Access</h3>
+                    <section>
+                        <label for="">
+                            Provide a link to your code repository.
+                        </label>
+                        <input type="text" class="form-control" name="repo" id="repo" placeholder="e.g. GitHub, GitLab">
+                        <label for="">
+                            Do you already have a Docker image which you can deploy? If yes, provide an URL to the
+                            image.
+                        </label>
+                        <input type="text" class="form-control" name="docker" id="docker"
+                            placeholder="e.g.on DockerHub, GitLab, GitHub">
+                        <label for="">
+                            Will you need to have access to GPUs? *
+                        </label>
+                        <div class="checkbox-circle">
+                            <label class="active">
+                                <input type="radio" id="gpu" name="gpu" value="No" Checked>No
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="gpu" name="gpu" value="Yes">Yes
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="gpu" name="gpu" value="I do not know">I do not know
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <label for="">
+                            Would it be shared with other members of your organization? *
+                        </label>
+                        <div class="checkbox-circle">
+                            <label class="active">
+                                <input type="radio" id="shared" name="shared" value="No" Checked>No
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="shared" name="shared" value="Only a selected few">Only a
+                                selected
+                                few
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" id="shared" name="shared" value="Most of them">Most of them
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </section>
+                    <h3>Project Duration</h3>
+                    <section>
+                        <label for="">
+                            Number of users expected to add to your project? *
+                        </label>
+                        <input id="nouser" name="nouser" type="number" min="0" class="form-control required">
+                        <label for="">
+                            What kind of data is in your data source or data set? *
+                        </label>
+                        <input id="data" name="data" type="text" class="form-control required"
+                            placeholder="e.g. MRI Images, Text from law books">
+                        <label for="">
+                            Until which date do you think you will need to use the DSRI for this project? *
+                        </label>
+                        <input id="expdate" name="expdate" type="date" class="form-control required" required>
+                        <label for="">
+                            How did you hear about us ?
+                        </label>
+                        <input id="known" name="known" type="text" class="form-control">
+                    </section>
+                    <h3>GDPR</h3>
+                    <section>
+                        <label for="">
+                            The DSRI infrastructure is accessible for UM researchers and students. Although DSRI has all
+                            relevant security and privacy measures in place to ensure a stable system, we want to
+                            emphasize
+                            it is the responsibility of the user which data he or she is using to perform their work on
+                            DSRI.<b> GDPR compliance is the responsibility of the researcher.</b> In case there are any
+                            questions, you can visit <a
+                                href="https://library.maastrichtuniversity.nl/research-support/rdm/guide/#personal-data-privacy-security">
+                                UM - Research Data Management. </a>or contact your faculty information manager.
+                        </label>
+                        <input type="checkbox" id="condition" name="condition" value="Agree" required> <i>I understand my
+                            responsibilities towards GDPR compliance.</i>
+                    </section>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js'></script>
+    <script src="js/script_new.js"></script>
+
+</body>
+
+</html>

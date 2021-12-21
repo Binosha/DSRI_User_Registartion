@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>DSRI User Registration</title>
+    <script type="text/javascript">
+      function CheckOrganization(val){
+       var element=document.getElementById('other');
+       if(val=='others')
+         element.style.display='block';
+       else  
+         element.style.display='none';
+      }
+    </script>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          
+
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              
+              <h3 class="heading mb-4">DSRI User Registration</h3>
+              <p>Please provide us below details about your project to get access to the Data Science Research Infrastructure (DSRI).</p>
+
+              <p><img src="images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-8">
+              
+              <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-muted">Provide your email address (@maastrichtuniversity.nl , @student.maastrichtuniversity.nl )</small>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Provide your email address (@maastrichtuniversity.nl , @student.maastrichtuniversity.nl ) ">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="UM account name (P number or UM user name) e.g. P700000 or A.Peter">
+                  </div>
+                </div>
+                <div class="item">
+                  <label for="organization">Which organization is involved in DSRI work?<span>*</span></label>
+                  <!-- <input id="organization" type="text"   name="organization" required/> -->
+                  <select name="other" onchange='CheckOrganization(this.value);'>
+                    <option selected value="" disabled selected></option>              
+                    <option value="BIGCAT" >BIGCAT</option>
+                    <option value="DKE">DKE</option>
+                    <option value="FHML">FHML</option>
+                    <option value="FSE">FSE</option>
+                    <option value="GWFP">GWFP</option>
+                    <option value="HSR">HSR</option>
+                    <option value="ICTS">ICTS</option>
+                    <option value="IDS">IDS</option>
+                    <option value="LOFSE">LOFSE</option>
+                    <option value="MAASTRO">MAASTRO</option>
+                    <option value="MACSBIO">MACSBIO</option>
+                    <option value="MSCM">MSCM</option>
+                    <option value="MSP">MSP</option>
+                    <option value="NUTRIM">NUTRIM</option>
+                    <option value="PHARTOX">PHARTOX</option>
+                    <option value="PN">PN</option>
+                    <option value="PSYCHO">PSYCHO</option>
+                    <option value="SBE">SBE</option>
+                    <option value="SCI">SCI</option>
+                    <option value="SP">SP</option>
+                    <option value="TECHLAB">TECH LAB</option>
+                    <option value="TGX">TGX</option>
+                    <option value="UB">UB</option> 
+                    <option value="others">others</option>
+                  </select>
+                  <input type="text" name="other" id="other" style='display:none;'/>
+                </div>
+                <div class="item">
+                  <label for="organization">Which Faculty are you ?<span>*</span></label>
+                  <!-- <input id="organization" type="text"   name="organization" required/> -->
+                  <select>
+                    <option selected value="" disabled selected></option>              
+                    <option value="FASOS" >FASOS</option>
+                    <option value="FHML">FHML</option>
+                    <option value="FL">FL</option>
+                    <option value="FPN">FPN</option>
+                    <option value="FSE">FSE</option>
+                    <option value="SBE">SBE</option>
+                    <option value="UM">UM</option> 
+                  </select>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Write your message"></textarea>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-12">
+                    <input type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+              <div id="form-message-warning mt-4"></div> 
+              <div id="form-message-success">
+                Your message was sent, thank you!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,2 +1,13 @@
-# DSRI_User_Registartion
-DSRI User Registration Website
+
+
+
+
+
+
+Start the server:
+
+```
+node index.js
+```
+
+
